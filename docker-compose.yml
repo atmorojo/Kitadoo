@@ -8,10 +8,10 @@ services:
     ports:
       - "127.0.0.1:8069:8069"
     volumes:
-      - addons:/mnt/extra-addons
-      - etc:/etc/odoo
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
   postgres:
     image: postgres:14
     env_file: .env
     volumes:
-      - db:/var/lib/postgresql/data/pgdata
+      - ./db:/var/lib/postgresql/data/pgdata
